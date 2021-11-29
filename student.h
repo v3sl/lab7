@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include <cassert>
 
 using namespace std;
 
@@ -30,7 +31,7 @@ public:
 class AfterSessiya : public Student {
 protected:
     AfterSessiya() = default;
-    int marks[4];
+    int* marks = new int [4];
 public:
     AfterSessiya(char *name_s, int course_s, int group_s, int number_s, int mark1_s, int mark2_s, int mark3_s,
                  int mark4_s);
@@ -43,7 +44,6 @@ public:
 class AfterSessiya2 : public AfterSessiya {
 protected:
     AfterSessiya2();
-    int marks2[5];
 public:
     AfterSessiya2(char *name_s, int course_s, int group_s, int number_s,int mark1_s, int mark2_s, int mark3_s,
                   int mark4_s, int mark5_s);
